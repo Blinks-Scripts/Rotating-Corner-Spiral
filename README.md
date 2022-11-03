@@ -13,10 +13,10 @@ inward to the next embedded square, and so on until we reach the center.
 For each embedded square, start with the upper left corner and proceed
 clockwise around the square visiting the four corners in sequence.
 
-Once you reach the fourth corner, ìrotateî your path one cell
+Once you reach the fourth corner, ‚Äúrotate‚Äù your path one cell
 clockwise and visit the four cells in sequence.
 
-Repeat ìrotatingî then visiting four cells until you have visited
+Repeat ‚Äúrotating‚Äù then visiting four cells until you have visited
 all the cells in the embedded square.
 
 Continue the sequence by proceeding inward to the upper left corner in
@@ -26,13 +26,13 @@ until all the embedded squares have been traversed.
 
 The problem is broken down by breaking the matrix into layers or rings
 that each can be seen as four vectors. Take a 3x3 matrix:
-
+```
 [1][2][3]
 [4][5][6]
 [7][8][9]
-
+```
 where [1..4, 6..9] comprise a layer, and [5] comprises a layer.
-The former layer can be broken into 4 vectors: {1,2}{3,6}{9,8}{7,4}.
+The former layer can be broken into 4 vectors: ```{1,2}, {3,6}, {9,8}, {7,4}```.
 In this case, the variable count would begin at 2, because each vector
 has two elements to provide to the traversal.  The code implementation does
 not explicitly divide these vectors but simply accomplishes it mathematically.
